@@ -1,0 +1,579 @@
+[
+    {
+        "id": "de372fbdc4ea228b",
+        "type": "tab",
+        "label": "mega",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ed53783f4bb1ac99",
+        "type": "http in",
+        "z": "de372fbdc4ea228b",
+        "name": "",
+        "url": "/caos",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "e494671901eea16a",
+                "6d9912b6836e5222",
+                "fd6b4361b03c6baa"
+            ]
+        ]
+    },
+    {
+        "id": "e494671901eea16a",
+        "type": "debug",
+        "z": "de372fbdc4ea228b",
+        "name": "post debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "748093239c870365",
+        "type": "function",
+        "z": "de372fbdc4ea228b",
+        "name": "numeros",
+        "func": "msg.payload = msg.payload.numeros\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 160,
+        "wires": [
+            [
+                "ff80fa682a700f6e"
+            ]
+        ]
+    },
+    {
+        "id": "fd6b4361b03c6baa",
+        "type": "json",
+        "z": "de372fbdc4ea228b",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 650,
+        "y": 160,
+        "wires": [
+            [
+                "748093239c870365",
+                "4192e2537cff15db",
+                "6b57e1b79ee39e14",
+                "e45875a506dfe9dc",
+                "a710d5ff1ba3753a",
+                "2a7adda506521d6a",
+                "19aa24d654809327",
+                "57180e8c3b60abbb"
+            ]
+        ]
+    },
+    {
+        "id": "a710d5ff1ba3753a",
+        "type": "debug",
+        "z": "de372fbdc4ea228b",
+        "name": "json debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6d9912b6836e5222",
+        "type": "http response",
+        "z": "de372fbdc4ea228b",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 590,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "63c5ae20a9288b3c",
+        "type": "ui_text",
+        "z": "de372fbdc4ea228b",
+        "group": "710d9c56605f0ed1",
+        "order": 14,
+        "width": 15,
+        "height": 1,
+        "name": "",
+        "label": "Hash:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1010,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4192e2537cff15db",
+        "type": "function",
+        "z": "de372fbdc4ea228b",
+        "name": "sementes",
+        "func": "msg.payload = msg.payload.semente\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 120,
+        "wires": [
+            [
+                "e4b231783f26d7d4"
+            ]
+        ]
+    },
+    {
+        "id": "6b57e1b79ee39e14",
+        "type": "function",
+        "z": "de372fbdc4ea228b",
+        "name": "hash",
+        "func": "msg.payload = msg.payload.hash\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 80,
+        "wires": [
+            [
+                "63c5ae20a9288b3c"
+            ]
+        ]
+    },
+    {
+        "id": "e4b231783f26d7d4",
+        "type": "ui_text",
+        "z": "de372fbdc4ea228b",
+        "group": "710d9c56605f0ed1",
+        "order": 17,
+        "width": 15,
+        "height": 1,
+        "name": "",
+        "label": "Semeste:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1020,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ff80fa682a700f6e",
+        "type": "ui_text",
+        "z": "de372fbdc4ea228b",
+        "group": "710d9c56605f0ed1",
+        "order": 20,
+        "width": 15,
+        "height": 1,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1010,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "e45875a506dfe9dc",
+        "type": "function",
+        "z": "de372fbdc4ea228b",
+        "name": "String",
+        "func": "// Verifica se o payload é uma string e converte para objeto, se necessário\nif (typeof msg.payload === 'string') {\n    msg.payload = JSON.parse(msg.payload);\n}\n\n// Opcional: Você pode adicionar um timestamp do servidor aqui\nmsg.payload.timestamp_nodered = new Date().toISOString();\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 240,
+        "wires": [
+            [
+                "22b1a1789f44277a"
+            ]
+        ]
+    },
+    {
+        "id": "01bdd3b78837887e",
+        "type": "http request",
+        "z": "de372fbdc4ea228b",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1280,
+        "y": 440,
+        "wires": [
+            [
+                "d2de166efb5135a1"
+            ]
+        ]
+    },
+    {
+        "id": "d2de166efb5135a1",
+        "type": "debug",
+        "z": "de372fbdc4ea228b",
+        "name": "google",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1510,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "22b1a1789f44277a",
+        "type": "debug",
+        "z": "de372fbdc4ea228b",
+        "name": "String debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "2a7adda506521d6a",
+        "type": "function",
+        "z": "de372fbdc4ea228b",
+        "name": "Learning",
+        "func": "// --- MINI MOTOR NEURAL (RNN) ---\n// Como não podemos instalar o brain.js, usamos matemática pura\nfunction predictNext(data) {\n    // Normalização 1-60 -> 0-1\n    let inputs = data.flat().map(n => n / 60);\n    \n    // Pesos simples (Simulando uma camada oculta)\n    // Em um sistema real, isso seria treinado, aqui usamos uma média móvel ponderada\n    // para detectar tendências de jitter no clock do ESP32\n    let forecast = [];\n    for (let i = 0; i < 6; i++) {\n        let sum = 0;\n        let weightSum = 0;\n        // Pega os últimos 10 sorteios para ver se há viés térmico\n        for (let j = 0; j < Math.min(data.length, 10); j++) {\n            let weight = (j + 1);\n            sum += data[data.length - 1 - j][i] * weight;\n            weightSum += weight;\n        }\n        let predicted = Math.round(sum / weightSum);\n        // Garante que o número está no range 1-60\n        forecast.push(Math.max(1, Math.min(60, predicted)));\n    }\n    return forecast;\n}\n\n// --- LÓGICA DO DESAFIO ---\n// 1. Pega o sorteio que acabou de chegar do ESP32\nlet sorteioAtual = msg.payload.numeros;\n\n// 2. Recupera o histórico que salvamos no 'global' (do Google ou memória)\nlet historico = global.get(\"caos_history\") || [];\n\nif (historico.length > 5) {\n    // A IA tenta prever o que o ESP32 geraria agora\n    let tentativaIA = predictNext(historico);\n    \n    // Compara a previsão com a realidade do silício\n    let acertos = sorteioAtual.filter(n => tentativaIA.includes(n)).length;\n    \n    msg.payload = {\n        previsao_ia: tentativaIA,\n        realidade_esp32: sorteioAtual,\n        acertos: acertos,\n        analise: acertos === 0 ? \"✅ CAOS PURO\" : \"⚠️ PADRÃO DETECTADO\"\n    };\n    \n    // Atualiza o histórico\n    historico.push(sorteioAtual);\n    if(historico.length > 100) historico.shift();\n    global.set(\"caos_history\", historico);\n    \n    return msg;\n} else {\n    // Alimenta o histórico inicial\n    historico.push(sorteioAtual);\n    global.set(\"caos_history\", historico);\n    node.status({fill:\"blue\",shape:\"ring\",text:\"Coletando dados: \" + historico.length});\n    return null;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 380,
+        "wires": [
+            [
+                "a7cabd6dd59b64b6"
+            ]
+        ]
+    },
+    {
+        "id": "a7cabd6dd59b64b6",
+        "type": "debug",
+        "z": "de372fbdc4ea228b",
+        "name": "analise",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "19aa24d654809327",
+        "type": "function",
+        "z": "de372fbdc4ea228b",
+        "name": "IA",
+        "func": "// Carregamento da biblioteca Synaptic a partir do contexto global\nconst synaptic = global.get('synaptic');\nconst { Architect } = synaptic;\n\n// 1. Definição de Dados de Entrada e Estado\nlet sorteioAtual = msg.payload.numeros; // Vem do seu ESP32 [cite: 16]\nlet rede = global.get(\"caos_network\");\nlet previsaoAnterior = global.get(\"ultima_previsao_ia\");\n\n// Inicializa a rede Perceptron (6 entradas -> 12 ocultas -> 6 saídas) se não existir\nif (!rede) {\n    rede = new Architect.Perceptron(6, 12, 6);\n    global.set(\"caos_network\", rede);\n    node.status({fill:\"blue\",shape:\"dot\",text:\"Rede Neural Inicializada\"});\n}\n\n// 2. O Confronto: Cálculo de Acertos\nlet acertos = 0;\nlet status = \"✅ CAOS PURO\";\n\nif (previsaoAnterior) {\n    // Compara a aposta feita no minuto anterior com a realidade de agora [cite: 24]\n    acertos = sorteioAtual.filter(n => previsaoAnterior.includes(n)).length;\n    if (acertos > 0) status = \"⚠️ PADRÃO DETECTADO\";\n}\n\n// 3. Aprendizado Contínuo (Treinamento)\nlet historico = global.get(\"caos_history\") || [];\nif (historico.length > 0) {\n    let entradaTreino = historico[historico.length - 1].map(n => n / 60);\n    let saidaDesejada = sorteioAtual.map(n => n / 60);\n    \n    // A IA ajusta os pesos tentando encontrar padrões no SHA-256 do silício [cite: 7, 8]\n    rede.activate(entradaTreino);\n    rede.propagate(0.3, saidaDesejada); \n}\n\n// 4. Geração da Próxima Aposta (Garantia de 6 números únicos)\nlet previsaoParaProximo = [];\nlet tentativaBruta = rede.activate(sorteioAtual.map(n => n / 60));\nlet idx = 0;\n\n// Loop para garantir que a IA preencha as 6 vagas da Mega sem repetir números\nwhile (previsaoParaProximo.length < 6) {\n    let n = Math.round(tentativaBruta[idx % 6] * 60);\n    \n    // Ajuste de limites (1-60)\n    if (n < 1) n = 1;\n    if (n > 60) n = 60;\n\n    // Se o número for repetido, aplica um deslocamento (jitter) para buscar o próximo disponível\n    if (previsaoParaProximo.includes(n)) {\n        n = (n % 60) + 1; \n    }\n\n    if (!previsaoParaProximo.includes(n)) {\n        previsaoParaProximo.push(n);\n    }\n    idx++;\n}\n\n// 5. Preparação do Payload para o Google Sheets (Mantendo o seu padrão)\nmsg.payload = {\n    semente: msg.payload.semente,      // Semente original do ESP32 [cite: 15]\n    hash: msg.payload.hash,            // Hash original do ESP32 [cite: 13, 14, 15]\n    numeros: sorteioAtual,             // Os 6 números reais do sorteio [cite: 16]\n    ia_tentativa: previsaoAnterior ? previsaoAnterior.join(\", \") : \"Treinando...\",\n    ia_acertos: acertos                // Placar do duelo\n};\n\n// 6. Atualização de Estado para o próximo ciclo (60s) [cite: 3]\nhistorico.push(sorteioAtual);\nif (historico.length > 100) historico.shift();\nglobal.set(\"caos_history\", historico);\nglobal.set(\"ultima_previsao_ia\", previsaoParaProximo);\n\nnode.status({fill:\"green\",shape:\"dot\",text:\"Acertos: \" + acertos});\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 440,
+        "wires": [
+            [
+                "f57d64b1c480ac88",
+                "01bdd3b78837887e"
+            ]
+        ]
+    },
+    {
+        "id": "f57d64b1c480ac88",
+        "type": "debug",
+        "z": "de372fbdc4ea228b",
+        "name": "IA analise",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "57180e8c3b60abbb",
+        "type": "function",
+        "z": "de372fbdc4ea228b",
+        "name": "MONITOR DE INTEGRIDADE",
+        "func": "// ╔══════════════════════════════════════════════════════════════════╗\n// ║     MONITOR DE INTEGRIDADE — com envio ao Google Sheets         ║\n// ║  Saída 1 → debug/dashboard  |  Saída 2 → http request (Google) ║\n// ╚══════════════════════════════════════════════════════════════════╝\n//\n// CONFIGURAÇÃO DO NÓ:\n//   • Outputs: 2\n//   • Saída 1: conecte a um nó debug \"monitor debug\"\n//   • Saída 2: conecte ao nó \"requisição http\" que já aponta para o\n//              seu Google Apps Script (mesma URL da aba Dados)\n//\n// O Apps Script agora detecta automaticamente se é sorteio ou alerta\n// pelo campo \"alertas\" presente no payload.\n\n// ─── PARÂMETROS ────────────────────────────────────────────────────\nconst CONFIG = {\n    JANELA_HISTORICO:     500,\n    MINIMO_PARA_ANALISE:  30,\n    ALPHA_EWMA:           0.1,\n    ALERTA_CHI2_CRITICO:  90,\n    ALERTA_CHI2_AVISO:    75,\n    ALERTA_REPETICAO_MAX: 0.15,\n    ALERTA_SEMENTE_ZERO:  true,\n    ALERTA_HASH_REPETIDO: true,\n    ALERTA_DELTA_SEMENTE: 1000,\n    // Envia para o Sheets mesmo quando não há alertas (linha STATUS_OK)\n    ENVIAR_STATUS_OK:     true,\n};\n\n// ─── ESTADO PERSISTENTE ────────────────────────────────────────────\nlet historico       = global.get(\"monitor_historico\")      || [];\nlet frequencias     = global.get(\"monitor_frequencias\")    || new Array(60).fill(0);\nlet hashes_vistos   = global.get(\"monitor_hashes\")         || [];\nlet sementes_vistas = global.get(\"monitor_sementes\")       || [];\nlet ewma_desvio     = global.get(\"monitor_ewma_desvio\")    || null;\nlet total_sorteios  = global.get(\"monitor_total\")          || 0;\nlet alertas_log     = global.get(\"monitor_alertas_log\")    || [];\n\n// ─── ENTRADA ───────────────────────────────────────────────────────\nconst sorteio_atual = msg.payload.numeros;\nconst semente_atual = msg.payload.semente;\nconst hash_atual    = msg.payload.hash;\n// Formato: DD/MM/AAAA HH:MM:SS (horário local do servidor Node-RED)\nfunction formatarData(d) {\n  const p = n => String(n).padStart(2, '0');\n  return `${p(d.getDate())}/${p(d.getMonth()+1)}/${d.getFullYear()} ${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`;\n}\nconst timestamp = formatarData(new Date());\n\n// ══════════════════════════════════════════════════════════════════\n// BLOCO 1 — Falhas críticas de hardware\n// ══════════════════════════════════════════════════════════════════\nlet alertas_criticos = [];\n\nif (CONFIG.ALERTA_SEMENTE_ZERO && semente_atual === 0) {\n    alertas_criticos.push({\n        tipo: \"HARDWARE_REBOOT\", severidade: \"CRITICO\",\n        mensagem: \"Semente = 0. ESP32 provavelmente reiniciou.\",\n        valor: semente_atual, timestamp\n    });\n}\n\nif (CONFIG.ALERTA_HASH_REPETIDO && hashes_vistos.includes(hash_atual)) {\n    alertas_criticos.push({\n        tipo: \"HASH_DUPLICADO\", severidade: \"CRITICO\",\n        mensagem: \"Hash SHA-256 idêntico a um sorteio anterior. RNG pode estar ciclando.\",\n        valor: hash_atual, timestamp\n    });\n}\n\nif (sementes_vistas.length > 0) {\n    const delta = Math.abs(semente_atual - sementes_vistas[sementes_vistas.length - 1]);\n    if (delta < CONFIG.ALERTA_DELTA_SEMENTE) {\n        alertas_criticos.push({\n            tipo: \"ENTROPIA_BAIXA\", severidade: \"AVISO\",\n            mensagem: `Variação de semente muito pequena (Δ=${delta}). Entropia possivelmente degradada.`,\n            valor: delta, timestamp\n        });\n    }\n}\n\n// ══════════════════════════════════════════════════════════════════\n// BLOCO 2 — Correlação entre sorteios consecutivos\n// ══════════════════════════════════════════════════════════════════\nlet repeticoes_consecutivas = 0;\nlet taxa_repeticao = 0;\n\nif (historico.length > 0) {\n    const anterior = historico[historico.length - 1].numeros;\n    repeticoes_consecutivas = sorteio_atual.filter(n => anterior.includes(n)).length;\n    taxa_repeticao = repeticoes_consecutivas / 6;\n\n    if (taxa_repeticao > CONFIG.ALERTA_REPETICAO_MAX) {\n        alertas_criticos.push({\n            tipo: \"CORRELACAO_CONSECUTIVA\", severidade: \"AVISO\",\n            mensagem: `${repeticoes_consecutivas} números repetidos vs sorteio anterior (${(taxa_repeticao*100).toFixed(1)}%).`,\n            valor: repeticoes_consecutivas, timestamp\n        });\n    }\n}\n\n// ══════════════════════════════════════════════════════════════════\n// BLOCO 3 — Qui-quadrado (χ²) de uniformidade\n// ══════════════════════════════════════════════════════════════════\nsorteio_atual.forEach(n => { if (n >= 1 && n <= 60) frequencias[n - 1]++; });\ntotal_sorteios++;\n\nlet chi2 = 0;\nlet chi2_alerta = \"OK\";\nlet numero_mais_frequente  = { numero: 0, freq: 0 };\nlet numero_menos_frequente = { numero: 0, freq: Infinity };\n\nif (total_sorteios >= CONFIG.MINIMO_PARA_ANALISE) {\n    const freq_esperada = (total_sorteios * 6) / 60;\n    for (let i = 0; i < 60; i++) {\n        const diff = frequencias[i] - freq_esperada;\n        chi2 += (diff * diff) / freq_esperada;\n        if (frequencias[i] > numero_mais_frequente.freq)\n            numero_mais_frequente  = { numero: i + 1, freq: frequencias[i] };\n        if (frequencias[i] < numero_menos_frequente.freq)\n            numero_menos_frequente = { numero: i + 1, freq: frequencias[i] };\n    }\n    chi2 = parseFloat(chi2.toFixed(2));\n\n    if (chi2 > CONFIG.ALERTA_CHI2_CRITICO) {\n        chi2_alerta = \"CRITICO\";\n        alertas_criticos.push({\n            tipo: \"VIES_ESTATISTICO_GRAVE\", severidade: \"CRITICO\",\n            mensagem: `Qui-quadrado = ${chi2} (limite: ${CONFIG.ALERTA_CHI2_CRITICO}). Distribuição enviesada.`,\n            valor: chi2, timestamp\n        });\n    } else if (chi2 > CONFIG.ALERTA_CHI2_AVISO) {\n        chi2_alerta = \"AVISO\";\n    }\n}\n\n// ══════════════════════════════════════════════════════════════════\n// BLOCO 4 — Desvio padrão com EWMA\n// ══════════════════════════════════════════════════════════════════\nconst media   = sorteio_atual.reduce((a, b) => a + b, 0) / 6;\nconst variance = sorteio_atual.reduce((acc, n) => acc + Math.pow(n - media, 2), 0) / 6;\nconst desvio_atual = Math.sqrt(variance);\n\nif (ewma_desvio === null) ewma_desvio = desvio_atual;\newma_desvio = CONFIG.ALPHA_EWMA * desvio_atual + (1 - CONFIG.ALPHA_EWMA) * ewma_desvio;\n\nconst desvio_normalizado = parseFloat((ewma_desvio / 17.32).toFixed(3));\nlet desvio_alerta = \"OK\";\n\nif (desvio_normalizado < 0.70 || desvio_normalizado > 1.30) {\n    desvio_alerta = \"AVISO\";\n    alertas_criticos.push({\n        tipo: \"DESVIO_PADRAO_ANOMALO\", severidade: \"AVISO\",\n        mensagem: `Desvio EWMA = ${ewma_desvio.toFixed(2)} (esperado ~17.32). Números concentrados numa faixa.`,\n        valor: ewma_desvio, timestamp\n    });\n}\n\n// ══════════════════════════════════════════════════════════════════\n// BLOCO 5 — Análise de runs (sequências consecutivas)\n// ══════════════════════════════════════════════════════════════════\nconst ordenado = [...sorteio_atual].sort((a, b) => a - b);\nlet runs = 1;\nfor (let i = 1; i < ordenado.length; i++) {\n    if (ordenado[i] !== ordenado[i - 1] + 1) runs++;\n}\nconst runs_alerta = runs <= 2 ? \"AVISO\" : \"OK\";\n\n// ══════════════════════════════════════════════════════════════════\n// BLOCO 6 — Score de saúde (0–100)\n// ══════════════════════════════════════════════════════════════════\nlet score = 100;\nif (chi2_alerta   === \"AVISO\")   score -= 20;\nif (chi2_alerta   === \"CRITICO\") score -= 50;\nif (desvio_alerta === \"AVISO\")   score -= 15;\nif (runs_alerta   === \"AVISO\")   score -= 10;\nif (taxa_repeticao > CONFIG.ALERTA_REPETICAO_MAX) score -= 15;\nalertas_criticos.forEach(a => { if (a.severidade === \"CRITICO\") score -= 25; });\nscore = Math.max(0, Math.min(100, score));\n\nconst saude_label =\n    score >= 85 ? \"🟢 SAUDÁVEL\" :\n    score >= 60 ? \"🟡 ATENÇÃO\"  :\n                  \"🔴 CRÍTICO\";\n\n// ══════════════════════════════════════════════════════════════════\n// BLOCO 7 — Persistência\n// ══════════════════════════════════════════════════════════════════\nhistorico.push({ numeros: sorteio_atual, semente: semente_atual, timestamp });\nif (historico.length       > CONFIG.JANELA_HISTORICO) historico.shift();\nif (hashes_vistos.length   > CONFIG.JANELA_HISTORICO) hashes_vistos.shift();\nif (sementes_vistas.length > CONFIG.JANELA_HISTORICO) sementes_vistas.shift();\n\nhashes_vistos.push(hash_atual);\nsementes_vistas.push(semente_atual);\nalertas_log = [...alertas_log, ...alertas_criticos].slice(-200);\n\nglobal.set(\"monitor_historico\",    historico);\nglobal.set(\"monitor_frequencias\",  frequencias);\nglobal.set(\"monitor_hashes\",       hashes_vistos);\nglobal.set(\"monitor_sementes\",     sementes_vistas);\nglobal.set(\"monitor_ewma_desvio\",  ewma_desvio);\nglobal.set(\"monitor_total\",        total_sorteios);\nglobal.set(\"monitor_alertas_log\",  alertas_log);\n\n// ══════════════════════════════════════════════════════════════════\n// BLOCO 8 — Monta saídas\n// ══════════════════════════════════════════════════════════════════\nconst relatorio = {\n    timestamp,\n    sorteio:          sorteio_atual,\n    total_analisados: total_sorteios,\n    saude: { score, label: saude_label },\n    metricas: {\n        chi2:          { valor: chi2, status: chi2_alerta },\n        desvio_padrao: { ewma: parseFloat(ewma_desvio.toFixed(2)), normalizado: desvio_normalizado, status: desvio_alerta },\n        repeticao_consecutiva: { quantidade: repeticoes_consecutivas, taxa: parseFloat((taxa_repeticao * 100).toFixed(1)) + \"%\" },\n        runs:          { valor: runs, status: runs_alerta },\n        distribuicao:  { numero_mais_frequente, numero_menos_frequente }\n    },\n    alertas:           alertas_criticos,\n    alertas_log_total: alertas_log.length\n};\n\n// Status visual no nó\nnode.status({\n    fill:  score >= 85 ? \"green\" : score >= 60 ? \"yellow\" : \"red\",\n    shape: \"dot\",\n    text:  `Score: ${score} | χ²: ${chi2} | Total: ${total_sorteios}`\n});\n\n// ── Saída 2: payload para o Google Sheets ──────────────────────────\n// O Apps Script identifica este payload pelo campo \"alertas\" e\n// grava na aba \"Alertas\" automaticamente.\n// Só envia se houver alertas OU se ENVIAR_STATUS_OK estiver ativo.\nlet msg_sheets = null;\n\nif (alertas_criticos.length > 0 || CONFIG.ENVIAR_STATUS_OK) {\n    msg_sheets = {\n        payload: {\n            alertas:          alertas_criticos,\n            saude:            { score, label: saude_label },\n            metricas:         relatorio.metricas,\n            total_analisados: total_sorteios,\n            timestamp\n        },\n        headers: { \"Content-Type\": \"application/json\" },\n        method:  \"POST\"\n    };\n}\n\n// Saída 1 → debug/dashboard\n// Saída 2 → nó \"requisição http\" (Google Sheets)\nreturn [{ payload: relatorio }, msg_sheets];",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 560,
+        "wires": [
+            [
+                "d80a039366977a47",
+                "01bdd3b78837887e"
+            ]
+        ]
+    },
+    {
+        "id": "d80a039366977a47",
+        "type": "debug",
+        "z": "de372fbdc4ea228b",
+        "name": "monitor debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "9a83cfa90cf0fc61",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c26bde9724baa120",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "08423c0d672529d9",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "eff80e33cd27bb45",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "60b35885b41c7492",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d86240e4109e6f6e",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5dd6a5ab065cb164",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8434afe223a0d97e",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e48f64af0702b797",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 13,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "53bd63d686852c20",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 15,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "8276f0debe544b3d",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 16,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "139c6a753ce99cb3",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 18,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "ae5578c8594cf65a",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 19,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "8e20a54a09a9d0c6",
+        "type": "ui_spacer",
+        "z": "de372fbdc4ea228b",
+        "name": "spacer",
+        "group": "710d9c56605f0ed1",
+        "order": 21,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "710d9c56605f0ed1",
+        "type": "ui_group",
+        "name": "Quarto",
+        "tab": "299e41aa60cc5967",
+        "order": 1,
+        "disp": true,
+        "width": 21,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "299e41aa60cc5967",
+        "type": "ui_tab",
+        "name": "Sensores",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3a06828280163dc1",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
